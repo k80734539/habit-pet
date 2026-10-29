@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>習慣小寵物</title>
+<meta name="theme-color" content="#ffb84d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="習慣小寵物">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header class="top">
+    <div class="title">🐾 習慣小寵物</div>
+    <div class="streak" id="streak">🔥 0 天</div>
+  </header>
+
+  <main>
+    <section class="pet-card" id="petCard">
+      <div class="bubble" id="bubble">嗨！我是你的小寵物～</div>
+      <div class="pet-stage" id="petStage"><div class="pet" id="pet">🥚</div><div class="shadow"></div></div>
+      <div class="pet-name" id="petName">神祕蛋</div>
+      <div class="bars">
+        <div class="bar-row"><span>心情</span><div class="bar"><i id="moodBar"></i></div><b id="moodTxt"></b></div>
+        <div class="bar-row"><span id="lvTxt">Lv.1</span><div class="bar"><i id="xpBar" class="xp"></i></div><b id="xpTxt"></b></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head"><h2>今天的習慣</h2><span id="progress" class="chip">0/0</span></div>
+      <ul id="habits"></ul>
+      <button id="addBtn" class="add">＋ 新增習慣</button>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head"><h2>本週紀錄</h2><span class="chip" id="totalChip">累計 0 次</span></div>
+      <div id="week" class="week"></div>
+    </section>
+    <p class="foot">資料只存在這支手機裡 · <a href="#" id="resetLink">重置全部</a></p>
+  </main>
+</div>
+
+<div class="modal" id="modal" hidden>
+  <form class="sheet" id="form">
+    <h3>新增習慣</h3>
+    <div class="emoji-row" id="emojiRow"></div>
+    <input id="emojiInput" maxlength="4" aria-label="表情符號" value="💧">
+    <input id="nameInput" maxlength="16" placeholder="習慣名稱，例如：喝水 8 杯" required autocomplete="off">
+    <div class="btns"><button type="button" id="cancelBtn" class="ghost">取消</button><button type="submit" class="primary">加入</button></div>
+  </form>
+</div>
+<div id="confetti"></div>
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
